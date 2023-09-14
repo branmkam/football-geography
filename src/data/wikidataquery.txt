@@ -1,0 +1,12 @@
+SELECT ?clubLabel ?countryLabel ?leagueLabel ?logoImage ?venueLabel ?coordinates ?website
+WHERE
+{
+	?club wdt:P31 wd:Q476028 .
+	?club wdt:P115 ?venue .
+    ?club wdt:P118 ?league .
+    ?club wdt:P17 ?country .
+    ?club wdt:P154 ?logoImage .
+	?venue wdt:P625 ?coordinates .
+    ?club wdt:P856 ?website
+	SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
